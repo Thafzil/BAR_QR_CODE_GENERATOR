@@ -1,0 +1,25 @@
+<div class="qrcode-main">
+    <div class="intro"> 
+        <h1>QR Code Decoder</h1>
+        <p>
+            A QR code decoder is a program that can read and interpret QR codes from an image. 
+            A QR code is a type of two-dimensional barcode that can store information such as URLs, 
+            text, phone numbers, and more. QR codes are commonly used in marketing, advertising, and ticketing applications,
+            and can be read by a smartphone camera or a specialized QR code reader.
+        </p>
+        <p>
+            A QR code decoder works by analyzing the pattern of black and white squares 
+            in a QR code and decoding the data encoded within them.
+        </p>
+    </div>
+
+    <div class="inp">
+        <input type="file" (change)="onFileSelected($event)" accept=".png,.jpeg,.jpg"/>
+        <button mat-raised-button color="primary" (click)="onProcessButtonClick()">Decode the QR Code</button>
+    </div>
+    <p class="decoded" *ngIf="decoded_string"><span>Decoded string is:</span><span (click)="gotosite(decoded_string)" [class.underline]="decoded_string.indexOf(':')!==-1">{{decoded_string}}</span></p>
+    <div class="link-here">
+        <p>Try generating QR codes <a routerLink="/qrcode">here</a>.</p>
+      </div>
+
+</div>

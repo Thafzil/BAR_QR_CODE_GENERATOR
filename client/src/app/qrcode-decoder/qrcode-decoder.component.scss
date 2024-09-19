@@ -1,0 +1,85 @@
+.qrcode-main{
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    flex-wrap: wrap;
+}
+.intro{
+    margin: 12px;
+}
+
+.inp input{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    width: 100%;
+}
+
+.inp button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.inp p{
+    display: flex;
+    font-size: 28px;
+    padding: 12px;
+    justify-content: center;
+}
+
+.inp p span{
+    font-weight: bold;
+}
+
+.link-here{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding: 12px;
+    transition: 0.15s all ease-in-out;
+  }
+  
+  .link-here p{
+    margin-bottom: 0;
+    padding: 12px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  }
+
+.underline{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.underline:hover{
+    color: blue;
+}
+
+.decoded{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+    font-size: 28px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.decoded span{
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    // justify-content: center;
+    padding: 12px;
+    // overflow-x: scroll;
+}
+.decoded span:last-child{
+    line-height: 1.5em;
+}
+.decoded span:first-child{
+    padding-left: 0;
+  }

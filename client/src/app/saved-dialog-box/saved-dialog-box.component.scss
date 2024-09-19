@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    background-image: linear-gradient(
+        to left,
+        #03001e,
+        #7303c0,
+        #ec38bc,
+        #fdeff9
+      );
+}
+
+.head{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: end;
+  padding: 12px;
+}
+
+.head h1{
+  margin-bottom: 0;
+}
+.head button{
+  color: #ff0057;
+}
+.para{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  border: 2px dotted grey;
+}
+
+.btn-close{
+  float: right;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  color: #ff0057;
+}

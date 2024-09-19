@@ -1,0 +1,81 @@
+<div class="intro">
+  <p class="intro-name">Hi, {{getName()}}</p>
+  <div class="sec-intro">
+    <p>
+      With our user-friendly interface, you can easily generate Barcodes and QR codes for any text you input, whether it's a simple text or a CSV file.
+    </p>
+    <p>Our application allows you to download and share the generated image, making it easy to use in any context.</p> 
+    <p>Here, you can save the image to our database for future reference, giving you quick and easy access to your generated codes whenever you need them.</p>
+    <p>We also provide tools - Barcode decoder and QR code decoder to decode the generated Barcodes (Code128) and QR codes</p>
+    <p>Try it out now and experience the ease and convenience of our Barcode and QR code web application by hovering on the below cards! </p>  
+  </div>
+</div>
+<div class="container">
+    <div class="card" routerLink="/barcode">
+      <div class="imgBx" data-text="BARCODE GENERATOR">
+        <!-- <img src="https://wallpapers.com/images/hd/fancy-letter-b-urst5inhles33v2w.jpg" alt="" /> -->
+      </div>
+      <div class="content">
+        <div>
+          <h3>Barcode Generator</h3>
+          <p>
+            A barcode generator is an application that creates a barcode image for a specific text or upto 100 values in a CSV file. 
+            Barcodes are used in retail, inventory management, and other industries to quickly and accurately identify 
+            items and track them through various stages of production, distribution, and sales.
+          </p>
+          <button mat-raised-button color="accent" routerLink="/barcode">Start Generating</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" routerLink="/qrcode">
+      <div class="imgBx" data-text="QR CODE GENERATOR">
+        <!-- <img src="https://e0.pxfuel.com/wallpapers/267/152/desktop-wallpaper-q-letter-q-thumbnail.jpg" alt="" /> -->
+      </div>
+      <div class="content">
+        <div>
+          <h3>QR code Generator</h3>
+          <p>
+            A QR code generator is an application that creates <b>Quick Response (QR)</b> codes, 
+            which are two-dimensional barcodes that can be read using a smartphone camera. QR codes can store 
+            information such as website URLs, contact information, product details, and more.
+          </p>          
+          <button mat-raised-button color="accent" routerLink="/qrcode">Start Generating</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" routerLink="/barcode-decode">
+      <div class="imgBx" data-text="BAR CODE DECODER">
+        <!-- <img src="https://wallpapers.com/images/hd/fancy-letter-b-urst5inhles33v2w.jpg" alt="" /> -->
+      </div>
+      <div class="content">
+        <div>
+          <h3>Barcode Decoder</h3>
+          <p>
+            A barcode decoder is a tool that can read and interpret barcode symbols. 
+            Barcodes are widely used in various industries, such as retail, transportation, and logistics, 
+            to store and retrieve information quickly and accurately.
+            This is an essential tool for applications that need to process barcode data, 
+            such as inventory management, order tracking, and product authentication.
+        </p>
+          <button mat-raised-button color="accent" routerLink="/barcode-decode">Start Generating</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" routerLink="/qrcode-decode">
+      <div class="imgBx" data-text="QR CODE DECODER">
+        <!-- <img src="https://e0.pxfuel.com/wallpapers/267/152/desktop-wallpaper-q-letter-q-thumbnail.jpg" alt="" /> -->
+      </div>
+      <div class="content">
+        <div>
+          <h3>QR code Decoder</h3>
+        <p>
+            A QR code decoder is a program that can read and interpret QR codes from an image. 
+            A QR code is a type of two-dimensional barcode that can store information such as URLs, 
+            text, phone numbers, and more. QR codes are commonly used in marketing, advertising, and ticketing applications,
+            and can be read by a smartphone camera or a specialized QR code reader.
+        </p>
+          <button mat-raised-button color="accent" routerLink="/qrcode-decode">Start Generating</button>
+        </div>
+      </div>
+    </div>
+  </div>

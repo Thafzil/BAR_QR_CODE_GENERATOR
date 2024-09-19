@@ -1,0 +1,48 @@
+<ng-container *ngIf="imgs && imgs.length">
+  <div class="storeAll" *ngIf="isSaved && inp_type!=='text'">
+    <button mat-icon-button matTooltip="Save all images to the Database" (click)="save()"><mat-icon>storage</mat-icon></button>
+  </div>
+  <div *ngFor="let img of imgs" class="barcode-img">
+    <img [src]="inp_type==='text'?img:img['image']" id="res_img" alt="thafzil_code" srcset="" (click)="download(img)" />
+    <div class="btns">
+      <button
+        matTooltip="Download"
+        mat-mini-fab
+        color="accent"
+        aria-label="Example icon button with a menu icon"
+        (click)="download(img)"
+      >
+        <mat-icon>download</mat-icon>
+      </button>
+      <button
+        matTooltip="Share"
+        mat-mini-fab
+        color="accent"
+        aria-label="Example icon button with a menu icon"
+        (click)="share(inp_type==='text'?img:img['image'], inp_type==='text'?inp_text:img['name'])"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+      <button
+      *ngIf="isSaved && inp_type==='text'"
+      matTooltip="Save to Database"
+      mat-mini-fab
+      color="accent"
+      aria-label="Example icon button with a menu icon"
+      (click)="save()"
+    >
+      <mat-icon>storage</mat-icon>
+    </button>
+    <button
+      *ngIf="delete"
+      matTooltip="Delete from your database"
+      mat-mini-fab
+      color="accent"
+      aria-label="Example icon button with a menu icon"
+      (click)="delete_image(img)"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+    </div>
+  </div>
+</ng-container>

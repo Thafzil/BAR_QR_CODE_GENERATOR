@@ -1,0 +1,78 @@
+<div class="QRcode-main">
+  <div class="intro">
+    <h1>QR code Generator</h1>
+    <p>
+      A QR code generator is an application that creates
+      <b>Quick Response (QR)</b> codes, which are two-dimensional barcodes that
+      can be read using a smartphone camera. QR codes can store information such
+      as website URLs, contact information, product details, and more.
+    </p>
+    <p>
+      Here, QRcode can be generated for a given text or list of barcodes can be
+      generated for an uploaded CSV file. The generated barcode/s can be either
+      downloded to the device or can be shared across other users.
+    </p>
+  </div>
+  <div class="radio-btns">
+    <mat-radio-group
+      aria-label="Select an option"
+      [(ngModel)]="isText"
+      (change)="resetForm()"
+    >
+      <mat-radio-button value="text" [checked]="true"
+        >Write text</mat-radio-button
+      >
+      <mat-radio-button value="csv"
+        >Load text using a CSV file</mat-radio-button
+      >
+    </mat-radio-group>
+  </div>
+
+  <div class="example-form">
+    <mat-form-field *ngIf="isText === 'text'" class="example-full-width">
+      <mat-label>Generate QRcode with a simple text</mat-label>
+      <input
+        type="text"
+        [(ngModel)]="textVal"
+        matInput
+        placeholder="Enter the text for which you want to generate QRcode"
+      />
+    </mat-form-field>
+    <div *ngIf="isText === 'csv'" class="example-full-width-2">
+      <label class="label1" for="csvFile"
+        >Generate QRcodes by uploading a CSV file
+        <mat-icon
+          matTooltip="Limit is 100 values. Generates QR codes for first 100 values"
+          >info</mat-icon
+        >
+      </label>
+
+      <input type="file" (change)="onFileSelected($event)" accept=".csv" />
+      <div *ngIf="fileName">Selected file: {{ fileName }}</div>
+    </div>
+    <button
+      mat-raised-button
+      color="primary"
+      class="QRcode-btn"
+      (click)="generateQR()"
+      type="submit"
+    >
+      Generate
+    </button>
+  </div>
+
+  <div class="link-here">
+    <p>
+      Try decoding the generated QR codes
+      <a routerLink="/qrcode-decode">here</a>.
+    </p>
+  </div>
+  <app-imagebox
+    class="QRcode-img"
+    [imgs]="img_QRs"
+    [inp_text]="textVal"
+    [inp_type]="isText"
+    (dbClick)="handledbClick()"
+    class="img-box"
+  ></app-imagebox>
+</div>

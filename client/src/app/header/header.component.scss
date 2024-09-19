@@ -1,0 +1,40 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.anch{
+  display: flex;
+  transition: 0.5s all ease-in-out;
+  color: beige;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.anch:hover{
+  transform: scale(1.15);
+  color: #ff0057;
+}
+
+@media (max-width:992px){
+  .anch{
+    color: #ff0057;
+    padding: 8px;
+  }
+  .heading span{
+    display: none;
+    
+  }
+}
+.heading{
+  cursor: pointer;
+  margin-bottom: 0px;
+  display: flex;
+  a{
+    padding: 2px;
+    display: flex;
+  }
+  transition: 0.5s all ease-in-out;
+}
+
+.heading:hover{
+  text-decoration: underline;
+}

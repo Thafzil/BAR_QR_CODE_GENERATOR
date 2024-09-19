@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="btn-close">
+    <button mat-icon-button matTooltip="Close the dialog" (click)="onNoClick()"><mat-icon>close</mat-icon></button>
+  </div>
+  <div class="head">
+    <h1 mat-dialog-title>Saved Images</h1>
+    <button *ngIf="imgs.length" mat-icon-button matTooltip="Delete all images from the Database" (click)="deleteAll()"><mat-icon>delete</mat-icon></button>
+
+  </div>
+  <div mat-dialog-content>
+    <app-imagebox
+    class="barcode-img"
+    [imgs]="imgs"
+    [inp_type]="isText"
+    class="img-box"
+    [isSaved]="false"
+    [delete]="true"
+    (deleteClick)="handledbClick($event)"
+  ></app-imagebox>
+  <p class="para" *ngIf="!imgs.length">No images saved to the database</p>
+</div>
+</div>
+<!-- <div mat-dialog-actions class="btns">
+  <button mat-button (click)="onNoClick()">No</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="'True'" cdkFocusInitial>Yes</button>
+</div> -->

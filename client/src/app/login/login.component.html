@@ -1,0 +1,191 @@
+<div class="body-class">
+  <div class="box-form">
+    <div class="left">
+      <div class="overlay">
+        <h1>Barcode <mat-icon>swap_horiz</mat-icon> QRcode Generator & Decoder</h1>
+        <p>Generates Barcodes and QR codes for the given text/s.</p>
+        <p>Decodes Barcodes and QR codes for the given generated image/s</p>
+        <p>The text can be provided by a simple text or using a CSV file.</p>
+        <p>
+          This application featured with downading and sharing the generated
+          image.
+        </p>
+        <p>
+          And there is an option to save the image to the database for your
+          future reference
+        </p>
+        <ul>
+          <strong>Project Team Members</strong>
+          <li>Sardar Thafzil Ahamed (sarda2t)</li>
+          <li>Padmaraju Yaswini (padma1y)</li>
+          <li>Sai Kiran Debbadi (debba1s)</li>
+          <li>Sri Srujani Kandula (kandu3s)</li>
+          <li>Riad Hossain (hossa1r)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right">
+      <h5 *ngIf="!signup_val">Login</h5>
+      <h5 *ngIf="signup_val">Sign Up</h5>
+      <div class="inputs" *ngIf="!signup_val">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            (keyup.enter)="login()"
+            type="email"
+            [(ngModel)]="username"
+            matInput
+            placeholder="Enter your email"
+            required="required"
+            #emailField="ngModel"
+            email
+          />
+        </mat-form-field>
+        <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" class="alert alert-danger">
+          <span *ngIf="emailField.errors['required']">Email is required.</span>
+          <span *ngIf="!emailField.errors['required'] && emailField.invalid">Invalid email format.</span>
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input
+            (keyup.enter)="login()"
+            type="password"
+            [(ngModel)]="password"
+            matInput
+            placeholder="Enter the password"
+            required="required"
+            #passField="ngModel"
+          />
+        </mat-form-field>
+        <div *ngIf="passField.invalid && (passField.dirty || passField.touched)" class="alert alert-danger">
+          <span *ngIf="passField.errors['required']">Password is required.</span>
+        </div>
+      </div>
+      <div class="inputs" *ngIf="signup_val">
+        <mat-form-field class="example-full-width">
+          <mat-label>Full Name</mat-label>
+          <input
+            (keyup.enter)="completeSignup()"
+            type="text"
+            [(ngModel)]="name"
+            matInput
+            placeholder="Enter your full name"
+            required="required"
+            #nameField="ngModel"
+          />
+        </mat-form-field>
+        <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)" class="alert alert-danger">
+          <span *ngIf="nameField.errors['required']">Full name is required.</span>
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            (keyup.enter)="completeSignup()"
+            type="email"
+            [(ngModel)]="username"
+            matInput
+            placeholder="Enter your email"
+            required="required"
+            #emailField1="ngModel"
+            email
+          />
+        </mat-form-field>
+        <div *ngIf="emailField1.invalid && (emailField1.dirty || emailField1.touched)" class="alert alert-danger">
+          <span *ngIf="emailField1.errors['required']">Email is required.</span>
+          <span *ngIf="!emailField1.errors['required'] && emailField1.invalid">Invalid email format.</span>
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input
+            (keyup.enter)="completeSignup()"
+            type="password"
+            [(ngModel)]="password"
+            matInput
+            placeholder="Password"
+            required="required"
+            #passField="ngModel"
+          />
+        </mat-form-field>
+        <div *ngIf="passField.invalid && (passField.dirty || passField.touched)" class="alert alert-danger">
+          <span *ngIf="passField.errors['required']">Password is required.</span>
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Confirm Password</mat-label>
+          <input
+            (keyup.enter)="completeSignup()"
+            type="password"
+            [(ngModel)]="password_confirm"
+            matInput
+            placeholder="Confirm your password"
+            required="required"
+            #passField1="ngModel"
+          />
+        </mat-form-field>
+        <div *ngIf="passField1.invalid && (passField1.dirty || passField1.touched)" class="alert alert-danger">
+          <span *ngIf="passField1.errors['required']">Password is required.</span>
+        </div>
+      </div>
+      <br />
+      <div class="btns">
+        <button
+          *ngIf="!signup_val"
+          class="btn"
+          mat-raised-button
+          color="accent"
+          (click)="login()"
+        >
+          Login
+        </button>
+        <button
+          *ngIf="!signup_val"
+          class="btn signup"
+          mat-raised-button
+          color="accent"
+          matTooltip="Sign up for free"
+          (click)="signup()"
+        >
+          Sign Up
+        </button>
+        <button
+          *ngIf="signup_val"
+          class="btn complete_sign_up"
+          mat-raised-button
+          color="accent"
+          matTooltip="Sign up for free"
+          (click)="completeSignup()"
+        >
+          Complete Sign Up
+        </button>
+        <button
+          *ngIf="signup_val"
+          mat-icon-button
+          color="accent"
+          matTooltip="Back to Login"
+          (click)="signup_val=false"
+        >
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+        <div class="itc">
+        <!-- <span>FINAL PROJECT</span>
+        <span>ITC-530: MOBILE COMPUTING</span> -->
+        <p>Try our application <a (click)="try()">here</a> without logging in</p>
+        </div>
+      </div>
+      <div *ngIf="err_msg !== ''" class="err-block">
+        <span>&nbsp;{{ err_msg }}&nbsp;</span>
+      </div>
+      <div class="contact">
+        <a
+          mat-icon-button
+          color="accent"
+          matTooltip="Contact us"
+          href="mailto:sarda2t@cmich.edu?cc=padma1y@cmich.edu,debba1s@cmich.edu,kandu3s@cmich.edu,hossa1r@cmich.edu" target="_blank"
+        >
+        <mat-icon>email</mat-icon>
+      </a>
+      </div>
+    </div>
+  </div>
+
+</div>

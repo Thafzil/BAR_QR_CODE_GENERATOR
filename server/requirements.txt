@@ -1,0 +1,12 @@
+flask
+flask-CORS
+bcrypt
+python-barcode
+qrcode
+gunicorn
+pandas
+pybase64
+ujson
+numpy
+pymongo
+pillow

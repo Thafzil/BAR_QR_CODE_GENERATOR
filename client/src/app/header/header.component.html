@@ -1,0 +1,16 @@
+
+    <mat-toolbar color="primary">
+      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+      <p class="heading" routerLink="/home"><a class="anch"><mat-icon>home</mat-icon></a><span>Barcode & QR Code</span></p>
+
+      <span class="example-spacer"></span>
+        <a class="anch" matTooltip="Share our page" *ngIf="checkLogout()" (click)="sharePage()"><mat-icon>share</mat-icon></a>
+        <a class="anch" matTooltip="Liked this site? Encourage us with your valuable feedback!!"  href="mailto:sarda2t@cmich.edu?cc=padma1y@cmich.edu,debba1s@cmich.edu,kandu3s@cmich.edu,hossa1r@cmich.edu&subject=Awesome Barcode and QR code Application app" target="_blank"><mat-icon>favorite</mat-icon></a>
+        <a class="anch" matTooltip="Saved Images" *ngIf="checkLogout()" (click)="openDialog2()"><mat-icon matBadge={{dbCount}} matBadgeColor="warn" matBadgeSize="small">burst_mode</mat-icon></a>
+        <a class="anch" matTooltip="Logout" *ngIf="checkLogout()" (click)="openDialog()"><mat-icon>logout</mat-icon></a>
+      <!-- <button matTooltip="Share the site with others" mat-icon-button class="example-icon" aria-label="icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button> -->
+    </mat-toolbar>

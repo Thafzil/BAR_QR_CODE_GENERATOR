@@ -1,0 +1,25 @@
+version: "0.1"
+
+# "Navigate to http://localhost:4200 in your web browser to access the application. Server deployed on port 8083. Database deployed using MongoDB" && sleep infinity'
+
+services:
+  client:
+    build: ./client
+    ports:
+      - "4200:8080"
+
+  server:
+    build: ./server
+    ports:
+      - "8083:8080"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    hostname: test_mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=itc_530
+      - MONGO_INITDB_ROOT_USERNAME=miniproject1
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+      
