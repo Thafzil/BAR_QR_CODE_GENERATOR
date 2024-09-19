@@ -38,7 +38,7 @@ def MongoDB():
     # Created a project called Barqrgenerator
     # And created a cluster0 in the project
     client = MongoClient(
-        "mongodb+srv://sarda2t:Mobilecomputing123%40@cluster0.tlktwhi.mongodb.net/test")
+        "mongodb+srv://thafzil:root@javaintegration.lwfty.mongodb.net/barqr")
     # Handling a single database to store user and image information
     database_itc530 = client.get_database('itc_530')
     user_records = database_itc530.user_records
@@ -62,12 +62,13 @@ def MongoDB_docker():
     # returning user and image records for the processing
     return user_records, images_records
 
+
 #  ------------- Comment the below line to run mongodb in docker container -------------
-# user_records,images_records = MongoDB()
+user_records, images_records = MongoDB()
 
 
 # ------------- Uncomment the below line to run mongodb in docker container and also comment the above line -------------
-user_records, images_records = MongoDB_docker()
+# user_records, images_records = MongoDB_docker()
 
 
 # -----API endpoints------
