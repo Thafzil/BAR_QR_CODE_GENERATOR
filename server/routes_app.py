@@ -38,7 +38,7 @@ def MongoDB():
     # Created a project called Barqrgenerator
     # And created a cluster0 in the project
     client = MongoClient(
-        "mongodb+srv://thafzil:root@javaintegration.lwfty.mongodb.net/barqr")
+        "mongodb+srv://sarda2t:sarda2t%40123@cluster0.tlktwhi.mongodb.net/?retryWrites=true&w=majority")
     # Handling a single database to store user and image information
     database_itc530 = client.get_database('itc_530')
     user_records = database_itc530.user_records
