@@ -2,9 +2,6 @@
 # Team members
 # Sardar Thafzil Ahamed (sarda2t)
 # Padmaraju Yaswini (padma1y)
-# Sai Kiran Debbadi (debba1s)
-# Sri Srujani Kandula (kandu3s)
-# Riad Hossain (hossa1r)
 
 # Importing required packages
 from flask import Flask, Response, request, send_file, jsonify, url_for, redirect, make_response
